@@ -8,7 +8,7 @@ var GetLocalizedPlayBadge = GetLocalizedPlayBadge || {};
 
 GetLocalizedPlayBadge.forCurrentLocale = GetLocalizedPlayBadge.forCurrentLocale || function (desiredWidth) {
         'use strict';
-        desiredWidth = desiredWidth || {};
+        desiredWidth = desiredWidth || 216;
         var PLAY_BADGE_IMG_PATH = 'http://steverichey.github.io/google-play-badge-svg/img/{locale}_get.svg';
         var _badgeFor = function(locale) {
                 var tinylocale = locale.toLowerCase().substring(0, 2);
@@ -16,5 +16,5 @@ GetLocalizedPlayBadge.forCurrentLocale = GetLocalizedPlayBadge.forCurrentLocale 
                 return PLAY_BADGE_IMG_PATH.replace('{locale}', locale);
         }
         var locale = navigator.language || navigator.browserLanguage;
-        document.write('<img src="' + _badgeFor(locale) + '" onerror="this.src=\'' + _badgeFor('en') + '\';" alt="Google Play"/>');
+        document.write('<img src="' + _badgeFor(locale) + '" onerror="this.src=\'' + _badgeFor('en') + '\';" alt="Google Play" width="' + desiredWidth + '" />');
 };
