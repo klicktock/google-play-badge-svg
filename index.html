@@ -1,61 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Google-play-badge-svg by steverichey</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <title>google-play-badge-svg by steverichey</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Google-play-badge-svg</h1>
-        <p>Hosting for localized versions of Google Play badges in SVG format.</p>
+    <div id="container">
+      <div class="inner">
 
-        <p class="view"><a href="https://github.com/steverichey/google-play-badge-svg">View on GitHub</a></p>
-      </header>
-      <section>
-        <h1>
-<a name="google-play-badge-svg" class="anchor" href="#google-play-badge-svg"><span class="octicon octicon-link"></span></a>google-play-badge-svg</h1>
+        <header>
+          <h1>google-play-badge-svg</h1>
+          <h2>Hosting for localized versions of Google Play badges in SVG format.</h2>
+        </header>
 
-<p>Hosting for localized versions of Google Play badges in SVG format.</p>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/steverichey/google-play-badge-svg/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/steverichey/google-play-badge-svg/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/steverichey/google-play-badge-svg" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="google-play-badge-svg" class="anchor" href="#google-play-badge-svg"><span class="octicon octicon-link"></span></a><a href="http://steverichey.github.io/google-play-badge-svg/">google-play-badge-svg</a>
+</h1>
+
+<p>Hosting for localized versions of Google Play™ badges in SVG format.</p>
 
 <h2>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
 
 <p>It's possible to use Apple's linkmaker service to generate localized "Download on the App Store" SVG badges for your application. However, no similar service exists for Google's "Get it on Google Play" badges.</p>
 
-<p>This repository serves mostly as hosting for Google's badges in SVG format.</p>
+<p>This repository serves mostly as hosting for Google's badges in SVG format. Most of the files are in the <a href="https://github.com/steverichey/google-play-badge-svg/tree/gh-pages">gh-pages</a> branch.</p>
 
 <h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>Todo</h2>
+
+<ul>
+<li>Optimize SVGs to minimize file size (using <a href="http://petercollingridge.appspot.com/svg_optimiser">this</a> for example).</li>
+<li>Add "Android App on" badges</li>
+</ul><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Simply link to the badge you require like so:</p>
 
-<pre><code>&lt;img src="http://steverichey.github.io/google-play-badge-svg/en_get.svg"&gt;
+<pre><code>&lt;img src="http://steverichey.github.io/google-play-badge-svg/img/en_get.svg"&gt;
 </code></pre>
 
-<p>This is still a work in progress! More information will be forthcoming.</p>
+<p>Which leads to <a href="http://steverichey.github.io/google-play-badge-svg/img/en_get.svg">this</a> image. Pretty handy! Be sure to add your own URL as well:</p>
+
+<pre><code>&lt;a href="https://play.google.com/store/apps/details?id=com.example.myapp"&gt;
+&lt;img alt="Get it on Google Play" src="http://steverichey.github.io/google-play-badge-svg/img/en_get.svg" /&gt;
+&lt;/a&gt;
+</code></pre>
+
+<p>And you'll get something like this:</p>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.example.myapp">
+<img align="middle" alt="Get it on Google Play" src="http://steverichey.github.io/google-play-badge-svg/img/en_get.svg"></a></p>
+
+<p>It's that easy! With a little JavaScript to check for locale (check <code>navigator.language || navigator.browserLanguage</code>) you can then load language-specific versions of the badge:</p>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.example.myapp">
+<img align="middle" alt="Get it on Google Play" src="http://steverichey.github.io/google-play-badge-svg/img/zh_get.svg"></a></p>
+
+<p>Or, you can call some handy JavaScript!</p>
+
+<pre><code>&lt;script type="text/javascript" src="https://raw.githubusercontent.com/steverichey/google-play-badge-svg/gh-pages/get-localized.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+document.write(GetLocalizedPlayBadge.forCurrentLocale());
+&lt;/script&gt;
+</code></pre>
+
+<p>Let me know if you have any questions, suggestions, or comments!</p>
+
+<h2>
+<a name="available-badges" class="anchor" href="#available-badges"><span class="octicon octicon-link"></span></a>Available badges</h2>
+
+<p>To view the list of available badges, please see <a href="https://github.com/steverichey/google-play-badge-svg/tree/gh-pages/img">this folder</a> or view all of the images in one place <a href="http://steverichey.github.io/google-play-badge-svg/all.html">here</a>. If I've made an error somewhere or you'd like an additional language added, please <a href="https://github.com/steverichey/google-play-badge-svg/issues">open an issue</a>.</p>
+
+<h2>
+<a name="notes" class="anchor" href="#notes"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<p>Badges are labeled by their <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> codes wherever possible. Languages with multiple dialects, such as Chinese, are labeled by their ISO 639-1 code followed by their <a href="http://en.wikipedia.org/wiki/ISO_639_macrolanguage">ISO 639-3</a> language code.</p>
+
+<p>By default, several versions of the Google Play badge use <a href="https://typekit.com/fonts/proxima-nova">Proxima Nova</a>, which is copyright Mark Simonson. As I do not own this font, it was replaced with <a href="https://typekit.com/fonts/myriad-pro">Myriad Pro</a>. No fonts are embedded in the SVGs; instead, I opted to convert them to outlines to maximize compatibility.</p>
+
+<p>Inclusion or omission of any language or dialect should not be misconstrued as support for any particular nationality, country, ideology, race, or similar. If there's a language in here, it's just because Google had it available or someone added it themselves. If a language is missing, it's just because Google did not have it available or I had issues with their file.</p>
 
 <h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>This repository is shared under an MIT license. See <a href="https://github.com/steverichey/google-play-badge-svg/blob/master/license.md">license.md</a> for details.</p>
+<p>Unless covered under some other license, all content in this repository is shared under an MIT license. See <a href="https://github.com/steverichey/google-play-badge-svg/blob/master/license.md">license.md</a> for details.</p>
 
-<p>Google's brand, logos, and so on are all their own trademarks and copyrights. Be sure to read the <a href="https://developer.android.com/distribute/tools/promote/brand.html">Branding Guidelines</a> and contact Google via the <a href="https://docs.google.com/forms/d/1YE5gZpAAcFKjYcUddCsK1Bv9a9Y-luaLVnkazVlaJ2w/viewform">Android and Google Play Brand Permissions Inquiry form</a> if you have any questions. SVGs in this repository were generated from files provided by Google <a href="https://developer.android.com/distribute/tools/promote/badge-files.html">here</a> which are shared under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> license.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/steverichey">steverichey</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<p>Google Play is a trademark of Google Inc. Google's brand, logos, and so on are all their own trademarks and copyrights. Be sure to read the <a href="https://developer.android.com/distribute/tools/promote/brand.html">Branding Guidelines</a> and contact Google via the <a href="https://docs.google.com/forms/d/1YE5gZpAAcFKjYcUddCsK1Bv9a9Y-luaLVnkazVlaJ2w/viewform">Android and Google Play Brand Permissions Inquiry form</a> if you have any questions. SVGs in this repository were generated from files provided by Google <a href="https://developer.android.com/distribute/tools/promote/badge-files.html">here</a> which are shared under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> license.</p>
+        </section>
+
+        <footer>
+          google-play-badge-svg is maintained by <a href="https://github.com/steverichey">steverichey</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
   </body>
 </html>
