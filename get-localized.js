@@ -13,7 +13,7 @@ GetLocalizedPlayBadge.forCurrentLocale = GetLocalizedPlayBadge.forCurrentLocale 
         var _badgeFor = function(locale) {
                 var tinylocale = locale.toLowerCase().substring(0, 2);
                 // should check for dialects here!
-                return PLAY_BADGE_IMG_REF.replace('{locale}', locale);
+                return PLAY_BADGE_IMG_PATH.replace('{locale}', locale);
         }
         var locale = navigator.language || navigator.browserLanguage;
         document.write('<img src="' + _badgeFor(locale) + '" onerror="this.src=\'' + _badgeFor('en') + '\';" alt="Google Play"/>');
