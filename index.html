@@ -16,24 +16,23 @@
   <body>
     <div id="container">
       <div class="inner">
-        <!--
+
         <header>
           <h1>google-play-badge-svg</h1>
           <h2>Hosting for localized versions of Google Play badges in SVG format.</h2>
         </header>
 
         <section id="downloads" class="clearfix">
-        
           <a href="https://github.com/steverichey/google-play-badge-svg/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
           <a href="https://github.com/steverichey/google-play-badge-svg/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/steverichey/google-play-badge-svg" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
-        
 
         <hr>
--->
+
         <section id="main_content">
           <h1>
-<a name="google-play-badge-svg" class="anchor" href="#google-play-badge-svg"><span class="octicon octicon-link"></span></a><a href="https://github.com/steverichey/google-play-badge-svg">google-play-badge-svg</a>
+<a name="google-play-badge-svg" class="anchor" href="#google-play-badge-svg"><span class="octicon octicon-link"></span></a><a href="http://steverichey.github.io/google-play-badge-svg/">google-play-badge-svg</a>
 </h1>
 
 <p>Hosting for localized versions of Google Play™ badges in SVG format.</p>
@@ -76,13 +75,21 @@
 <p><a href="https://play.google.com/store/apps/details?id=com.example.myapp">
 <img align="middle" alt="Get it on Google Play" src="http://steverichey.github.io/google-play-badge-svg/img/zh_get.svg"></a></p>
 
-<p>Or, you can call some handy JavaScript!</p>
+<p>Or, you can call some handy JavaScript! First, call this in your header to get the JavaScript straight from a CDN:</p>
 
-<pre><code>&lt;script type="text/javascript" src="https://raw.githubusercontent.com/steverichey/google-play-badge-svg/gh-pages/get-localized.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
-document.write(GetLocalizedPlayBadge.forCurrentLocale());
-&lt;/script&gt;
+<pre><code>&lt;script type="text/javascript" src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/100a2837efe8a90d2769507838e134351f045774/get-localized.js"&gt;&lt;/script&gt;
 </code></pre>
+
+<p>Then, add this HTML wherever you want your badge to appear:</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+  GetLocalizedPlayBadge.forCurrentLocale(320);
+ &lt;/script&gt;
+</code></pre>
+
+<p>The only argument it takes is for width; the height is determined automatically. Default width is 216 pixels.</p>
+
+<p>How does it look? Check it out "in the field" <a href="http://steverichey.com/dontmove/">here</a>!</p>
 
 <p>Let me know if you have any questions, suggestions, or comments!</p>
 
